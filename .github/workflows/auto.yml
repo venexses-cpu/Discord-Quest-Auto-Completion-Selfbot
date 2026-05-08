@@ -17,7 +17,7 @@ jobs:
       - name: Use Node.js 24
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: '24'
 
       - name: Install dependencies
         run: |
@@ -30,6 +30,7 @@ jobs:
       - name: Run the bot
         env:
           TOKEN: ${{ secrets.TOKEN }}
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: |
           echo "=== Starting Bot ==="
           ls -la
